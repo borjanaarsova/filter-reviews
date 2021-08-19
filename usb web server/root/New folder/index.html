@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Filter Reviews</title>
+</head>
+<body>
+<h2>Filter reviews</h2>
+<form method="POST" action="filter.php">
+
+<p>Prioritize by text:</p>
+<select name="text_order">
+<option selected="selected">Yes</option>
+<option>No</option>
+</select>
+
+<p>Order by rating:</p>
+<select name="rating_order">
+<option selected="selected">Highest First</option>
+<option>Lowest First</option>
+</select>
+
+<p>Order by date:</p>
+<select name="date_order">
+<option selected="selected">Newest First</option>
+<option>Oldest First</option>
+</select>
+
+<p>Minimum rating:</p>
+<select name="rating_minimum">
+<option selected="selected">5</option>
+<option>4</option>
+<option>3</option>
+<option>2</option>
+<option>1</option>
+</select>
+<br><br>
+<input type="submit" value="Filter"/>
+</form>
+</body>
+</html>
