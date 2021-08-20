@@ -6,7 +6,6 @@
 <?php
 extract($_POST);
 
-
 $json = file_get_contents('./reviews.json');
 $data = json_decode($json, true);
 
@@ -230,18 +229,17 @@ usort($data, function ($a, $b) use ($by_text, $by_rating, $by_date)
 	}
 });
 
-//usort($data, "sortReviews");     
+echo "<table border='1'>";
+echo "<tr><th>Review text</th><th>Rating</th><th>Created on</th></tr>";
 
-//foreach ($data as $key1 => $value1) {
-    //if($json_data[$key1]["Age"] < 20){
-  //      print_r $key1;
-		//print_r($data[$key1]);
-    //}
-
-//echo $data->"0";
-	print_r($data);
-	//echo $data;
-	//var_dump($data);
+foreach ($data as $key1 => $value1)
+{
+	if($value1["rating"] >= $rating_min)
+	{
+		print("<tr><td>".$value1['reviewText']."</td><td>".$value1['rating']."</td><td>".$value1['reviewCreatedOnDate']."</td></tr>");
+	}
+}
+echo "</table>";
 
 ?>
 </center>
